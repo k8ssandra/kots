@@ -28,11 +28,11 @@ func KotsadmTag(registryConfig types.RegistryConfig) string {
 func KotsadmTagForVersionString(kotsVersion string) string {
 	version, err := semver.NewVersion(kotsVersion)
 	if err != nil {
-		return "alpha"
+		return "v1.99.0"
 	}
 
 	if strings.Contains(version.Prerelease(), "dirty") {
-		return "alpha"
+		return "v1.99.0"
 	}
 
 	if !strings.HasPrefix(kotsVersion, "v") {
